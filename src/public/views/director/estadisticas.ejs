@@ -1,0 +1,36 @@
+<%if (logindirec===true) {%>
+    <%if(escuelaExist === true ){%>
+        <%- include ('../partials/headerDirec') %>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <div class="text-center my-3">
+            <h1>Bienvenido a la sección de "estadísticas".</h1>
+            <h5>En este apartado podrás ver gráficas acerca de la información de tu colegio.</h5>
+            <a href="/EstadisticasFuturas" class="btn btn-primary rounded-pill px-3"><i class="fas fa-chart-line"></i>  Estadísticas Futuras</a>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-md-7 col-sm-12">
+                <div class="card mb-3">
+                    <h5 class="text-center">Resultado cuestionarios.</h5>
+                    <%- include ('../partials/grafica1') %>
+                </div> 
+            </div>
+            <!-- <div class="col-md-4 col-sm-12">
+                <div class="card mb-3">
+                    <h5 class="text-center">Sexo alumnos.</h5>
+                </div> 
+            </div> -->
+            <div class="col-md-5 col-sm-12">
+                <div class="card mb-3">
+                    <h5 class="text-center">Síntomas.</h5>
+                    <%- include ('../partials/grafica3') %>
+                </div> 
+            </div>
+        </div>
+        <%- include ('../partials/footerDirec') %>
+        <%} else {%>
+            <%-include('../partials/errorsinescuela')%>
+        <%}%>
+    <%} else {%>
+            <%-include('../partials/erroracceso')%>
+        <%}%>

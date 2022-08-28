@@ -1,0 +1,75 @@
+<div class="row my-3 mx-2">
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h4 class="card-title text-center">CREAR ESCUELA</h4>
+            <div class="col-md-12">
+                <p class="lead text-center">Ingresa el nombre de la escuela para poderla registrar; posteriormente tendrás que
+                    volver a iniciar sesión para acceder a los datos de tu escuela. <br>El proceso tomará unos segundos.
+                </p>
+                <div class="">
+                    <form class="row g-3" id="registroAlum" method="POST" action="/crearEscuela">
+                        <div class="col-md-6 col-sm-12" id="input__escuela_nom">
+                            <input type="text" class="form-control" placeholder="Nombre de la escuela" id="escuela_nom" name="escuela_nom" required>
+                            <p class="formulario__input-error">El nombre tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12" id="input__escuela_cct">
+                            <input type="text" class="form-control" placeholder="Clave de centro de trabajo (CCT)" id="cct" name="cct" required>
+                            <p class="formulario__input-error">El CCT tiene que tener de 1 a 20 caracteres y solo puede contener letras y acentos.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12" id="input__escuela_entidad">
+                            <input type="text" class="form-control" placeholder="Entidad federativa" id="estado" name="estado" required>
+                            <p class="formulario__input-error">La entidad tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12" id="input__escuela_municipio">
+                            <input type="text" class="form-control" placeholder="Municipio/Alcaldía" id="municipio" name="municipio" required>
+                            <p class="formulario__input-error">El municipio tiene que tener de 1 a 50 caracteres y solo puede contener letras y acentos.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12" id="input__escuela_calle">
+                            <input type="text" class="form-control" placeholder="Calle" id="calle" name="calle" required>
+                            <p class="formulario__input-error">La calle tiene que tener de 1 a 50 caracteres y solo puede contener letras y acentos.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <label for="sostenimiento">Sostenimiento</label>
+                            <select id="sostenimiento" name="sostenimiento" class="form-select" required>
+                                <option>Público</option>
+                                <option>Privado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <label for="turno">Turno</label>
+                            <select id="turno" name="turno" class="form-select" required>
+                                <option>No aplica</option>
+                                <option>Matutino</option>
+                                <option>Vespertino</option>
+                                <option>Nocturno</option>
+                                <option>Discontinuo</option>
+                                <option>Continuo</option>
+                                <option>Abierto</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <label for="nivel_educativo">Nivel educativo</label>
+                            <select id="nivel_educativo" name="nivel_educativo" class="form-select" required>
+                                <option>Preescolar</option>
+                                <option>Primaria</option>
+                                <option>Secundaria</option>
+                                <option>Bachillerato</option>
+                                <option>Profesional</option>
+                                <option>Licenciatura</option>
+                                <option>Posgrado</option>
+                                <option>Formación para el trabajo</option>
+                                <option>CAM</option>
+                                <option>Mixto</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100 my-1"><i class="fas fa-plus"></i>  Registrar nueva escuela</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATARINA</title>
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/dictamigos.appspot.com/o/CatarinaGreen.png?alt=media&token=ddb8666b-e450-47c7-b600-ac7393e393ae">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body class="py-3">
+    <div class="row m-3 justify-content-center">
+        <div class="col-md-8 col-sm-12">
+            <div class="card mx-auto">
+                <div class="card-body px-5">
+                    <div class="col-md-12">
+                        <h4 class="text-center">REGISTRAR PROFESOR</h4>
+                        <p class="lead text-center">Este formulario es exclusivo para el registro de nuevos profesores, una vez registrado se te añadirá
+                            de forma inmediata a tu plantel académico.
+                        </p>
+                        <div class="py-3">
+                            <form class="row g-3" id="registroDirec" method="POST" action="/registro/registrarProf">
+                                <div class="col-md-4 col-sm-12" id="input__user_nom">
+                                    <input type="text" class="form-control" placeholder="Nombre(s)" id="user_nom" name="user_nom" required>
+                                    <p class="formulario__input-error">El nombre tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12" id="input__user_appat">
+                                    <input type="text" class="form-control" placeholder="Apellido paterno" id="user_appat" name="user_appat" required>
+                                    <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12" id="input__user_apmat">
+                                    <input type="text" class="form-control" placeholder="Apellido materno" id="user_apmat" name="user_apmat" required>
+                                    <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12" id="input__user_correo">
+                                    <input type="email" class="form-control" placeholder="Correo Electrónico" id="user_correo" name="user_correo" required>
+                                    <p class="formulario__input-error">El correo tiene que ser un formato válido.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12" id="input__user_contra">
+                                    <input type="password" class="form-control" placeholder="Contraseña" id="user_password" name="user_contra" required>
+                                    <p class="formulario__input-error">La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <input type="date" class="form-control" id="user_edad" name="user_edad" required>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <select id="user_sexo" name="user_sexo" class="form-select" required>
+                                        <option>Masculino</option>
+                                        <option>Femenino</option>
+                                    </select>
+                                </div>
+                                <div class="formulario__grupo" id="grupo__terminos">
+                                    <label class="formulario__label">
+                                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                                        Al marcar esta casilla, aceptas nuestros <a href="">aviso de privacidad</a> 
+                                        y nuestros <a href="https://firebasestorage.googleapis.com/v0/b/dictamigos.appspot.com/o/T%C3%A9rminos%20y%20Condiciones.pdf?alt=media&token=aedc4b95-7e82-4812-861c-43052cd4df47">términos y condiciones</a>.
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 my-1">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+
+    <!-- SCRIPTS -->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- JS -->
+    <script src="/js/validacionesReg.js"></script>
+</body>
+
+</html>

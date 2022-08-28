@@ -1,0 +1,34 @@
+<%if (logintutor===true) {%>
+        <%- include ('../partials/headerTutor') %>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-12 my-3 mx-2 p-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">DETALLES CUESTIONARIO</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <i>¿Tú o tu hijo han estado en contacto con algún paciente confirmado de COVID-19 en los últimos 15 días?</i>
+                            </li>
+                            <p>Respuesta alumno: <%= historial.contacto%></p>
+                            <p><b>Seleccione cuál de los siguientes síntomas presenta:</b></p>
+                            <li><i>Dolor de cabeza: </i><%= historial.dolor_cabeza%></li>
+                            <li><i>Tos: </i><%= historial.tos%></li>
+                            <li><i>Fiebre: </i><%= historial.fiebre%></li>
+                            <li><i>Dificultad para respirar: </i><%= historial.dificultad_respirar%></li>
+                            <li><i>Pérdida del sentido del olfato y el gusto: </i><%= historial.perdida_sentidos%></li>
+                            <li><i>Escurrimiento nasal: </i><%= historial.moco%></li>
+                            <li><i>Diarrea: </i><%= historial.diarrea%></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onClick="history.go(-1);" class="btn btn-primary ml-4 ir-atras"><i class="fas fa-angle-double-left"></i></button>
+        <%- include ('../partials/footerDirec') %>
+<%} else {%>
+        <%-include('../partials/erroracceso')%>
+    <%}%>

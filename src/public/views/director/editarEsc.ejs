@@ -1,0 +1,56 @@
+<%if (logindirec===true) {%>
+    <%- include ('../partials/headerDirec') %>
+    <div class="row my-3 mx-2">
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h4 class="card-title text-center">EDITAR INFORMACIÓN ESCUELA</h4>
+                <div class="col-md-12">
+                    <div class="">
+                        <form class="row g-3" id="registroAlum" method="POST" action="/detallesEscuela/<%=datosEsc.id_escuela%>">
+                            <div class="col-md-6 col-sm-12" id="input__escuela_nom">
+                                <label for="">Nombre escuela:</label>
+                                <input type="text" class="form-control" placeholder="Nombre de la escuela" id="escuela_nom" name="escuela_nom" value="<%=datosEsc.escuela_nom%>" required>
+                                <p class="formulario__input-error">El nombre tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12" id="input__escuela_cct">
+                                <label for="">Clave de centro de trabajo (CCT):</label>
+                                <input type="text" class="form-control" placeholder="Clave de centro de trabajo (CCT)" id="cct" name="cct" value="<%=datosEsc.cct%>" required>
+                                <p class="formulario__input-error">El CCT tiene que tener de 1 a 20 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-4 col-sm-12" id="input__escuela_entidad">
+                                <label for="">Entidad federativa:</label>
+                                <input type="text" class="form-control" placeholder="Entidad federativa" id="estado" name="estado" value="<%=datosEsc.estado%>" required>
+                                <p class="formulario__input-error">La entidad tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-4 col-sm-12" id="input__escuela_municipio">
+                                <label for="">Municipio/Alcaldía:</label>
+                                <input type="text" class="form-control" placeholder="Municipio/Alcaldía" id="municipio" name="municipio" value="<%=datosEsc.municipio%>" required>
+                                <p class="formulario__input-error">El municipio tiene que tener de 1 a 50 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-4 col-sm-12" id="input__escuela_calle">
+                                <label for="">Calle:</label>
+                                <input type="text" class="form-control" placeholder="Calle" id="calle" name="calle" value="<%=datosEsc.calle%>" required>
+                                <p class="formulario__input-error">La calle tiene que tener de 1 a 50 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-12 col-sm-12" id="input__user_correo">
+                                <label for="">Correo electrónico del director:</label>
+                                <input type="email" class="form-control" placeholder="Correo electrónico" id="user_correo" name="user_correo" value="<%=datosDirec.user_correo%>" required>
+                                <p class="formulario__input-error">El correo tiene que ser un formato válido.</p>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 my-1"><i class="fas fa-university"></i>  Editar datos escuela</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+    <%- include ('../partials/footerDirec') %>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>
+

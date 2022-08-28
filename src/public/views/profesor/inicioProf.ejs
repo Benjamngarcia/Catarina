@@ -1,0 +1,35 @@
+<%if (loginprof===true) {%>
+    <%- include ('../partials/headerProf') %>
+    <div class="container mx-auto my-4">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Última encuesta</th>
+                    <th>Fecha última encuesta</th>
+                    <th>Grupo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (datosAlum) { %>
+                    <% for(var i = 0; i < datosAlum.length; i++) { %>
+                        <tr>
+                            <td><%= datosAlum[i].user_nom %></td>
+                            <td><%= datosAlum[i].user_appat %></td>
+                            <td><%= datosAlum[i].enc_res %></td>
+                            <td><%= datosAlum[i].enc_fecha %></td>
+                            <td><%= datosAlum[i].grupo_alum %></td>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include ('../partials/footerDirec') %>
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+<%} else {%>
+<%-include('../partials/erroracceso')%>
+<%}%>

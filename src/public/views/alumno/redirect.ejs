@@ -1,0 +1,34 @@
+<%if (loginalum === true) {%>
+    <%- include ('../partials/headerAlum') %>
+    <!-- CONTAINER MESSAGE -->
+    <div class="container-xl">
+        <div class="row mx-auto justify-content-center">
+            <div class="col-md-5 col-sm-10">
+                <div class="text-center">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/dictamigos.appspot.com/o/redirect.png?alt=media&token=50b09fea-0e08-4dad-9f5e-6f289e610e32" alt="" width="55%">
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-10 col-sm-12 mt-4 p-3 text-center w-100" id="quizinstrucciones">
+                        <h3 class="text-center"><b>¡ALERTA!</b></h3>
+                        <h5 class="text-center">Te recomendamos acudir con un médico y realizarte una
+                            prueba PCR o de antígenos de SARS-CoV-2 a la brevedad, para evitar un
+                            posible contagio. Evita salir de casa, protégete y
+                            protege a tu familia.</h5>
+                        <h5>Para más detalles acerca del ingreso a tu plantel, consulta con los directivos.</h5>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3">
+                    <a href="/inicioAlumno" class="rounded-pill bg-primary p-3 px-5 text-light text-decoration-none mx-3 text-center">REGRESAR A INICIO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<%- include ('../partials/footerDirec') %>
+        <%if(typeof alert != "undefined"){%>
+            <%- include ('../partials/message')  %>
+        <%}%>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

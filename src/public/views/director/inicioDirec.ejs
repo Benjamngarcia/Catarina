@@ -1,0 +1,21 @@
+<%if (logindirec===true) {%>
+    <%if(escuelaExist === true ){%>
+        <%- include ('../partials/headerDirec') %>
+        <!-- VISTA DE INICIO POR SI HAY ESCUELA -->
+        <%- include ('./vistaInicio')%> 
+        <%- include ('../partials/footerDirec') %>
+        <%if(typeof alert != "undefined"){%>
+            <%- include ('./partials/message')  %>
+        <%}%>
+    <%} else {%>
+        <%- include ('../partials/headerDirec') %>
+        <!-- FORM POR SI NO HAY ESUCELA -->
+        <%-include ('../partials/formCrearEscuela') %>
+        <%- include ('../partials/footerDirec') %>
+        <%if(typeof alert != "undefined"){%>
+            <%- include ('./partials/message')  %>
+        <%}%>
+    <%}%>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

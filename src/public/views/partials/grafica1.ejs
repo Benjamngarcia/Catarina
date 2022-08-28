@@ -1,0 +1,47 @@
+    <div>
+        <input type="hidden" name="" id="valorGraf" value="<%=resultados%>">
+        <canvas id="myChart" width="200px" height="200px"></canvas>
+        <script>
+            var valorGraf = document.getElementById('valorGraf').value;
+            let str = valorGraf;
+            let arr = str.split(' ');
+            // console.log(arr);
+            let fin = [];
+            let array = arr;
+                array.forEach(element => {//Para cada valor del array
+                element.split(",").forEach(elm => {//Lo divido en 2 por la coma y para cada uno de los resultados
+                fin.push(parseFloat(elm));//LO meto en el array fin haciéndole un parse a float para evitar comillas
+                });
+            });
+            // console.log(fin);
+            const ctx = document.getElementById('myChart').getContext('2d');
+            // console.log(valorGraf)
+            var myChart = new Chart(ctx, {
+                responsive: true,
+                type: 'pie',
+                data: {
+                    labels: ['Bajo riesgo', 'Alto riesgo'],
+                    datasets: [{
+                        label: '% DE SALUD ESCUELA',
+                        data: fin,
+                        backgroundColor: [
+                            'rgb(133, 236, 106)',
+                            'rgb(255, 99, 132)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </div>

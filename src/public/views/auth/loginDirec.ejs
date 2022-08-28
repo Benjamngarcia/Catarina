@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATARINA</title>
+    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/dictamigos.appspot.com/o/CatarinaGreen.png?alt=media&token=ddb8666b-e450-47c7-b600-ac7393e393ae">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body class="py-5">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <p class="lead text-center">Iniciar sesión</p>
+                        <div class="py-3">
+                            <form id="loginU" method="POST" action="/loginDirec">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fs-4" id="basic-addon1"><i class="far fa-at"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" id="user_correo" name="user_correo" placeholder="Correo electrónico" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fs-4" id="basic-addon1"><i class="far fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="user_contra" name="user_contra" placeholder="Contraseña" required>
+                                </div>
+                                <button type="submit" class="btn btn-info w-100 my-1">Ingresar</button>
+                                <a href="/forgotPass" class="btn btn-warning w-100 my-1">Olvidé mi contraseña</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p class="lead">Registrarme ahora <span class="text-success">GRATIS</span></p>
+                        <ul class="list-unstyled" style="line-height: 2">
+                            <li><span class="fa fa-check text-success"></span> Brinda mayor seguridad a los alumnos.</li>
+                            <li><span class="fa fa-check text-success"></span> Ve gráficos estadísticos en tiempo real de tu colegio.</li>
+                            <li><span class="fa fa-check text-success"></span> Una inteligencia artificial te muestra cómo pueden avanzar los casos a futuro.</li>
+                            <li><span class="fa fa-check text-success"></span> Notifica a los padres por correo electrónico.</li>
+                        </ul>
+                        <p><a href="/registrarDirector" class="btn btn-success w-100">Registrarme ahora</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+
+    <!-- SCRIPTS -->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

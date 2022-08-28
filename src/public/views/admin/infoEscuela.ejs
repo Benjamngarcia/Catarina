@@ -1,0 +1,71 @@
+<%if (loginadmin===true) {%>
+    <%- include ('../partials/headerAdmin') %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <div class="container mt-3 text-center">
+        <div class="card p-3">
+            <div class="card-header">
+                <div class="card-title">
+                    <b>INFORMACIÓN ESCUELA</b>
+                </div>
+            </div>
+            <div class="card-body">
+                <p><b>Nombre escuela:</b> <%= infoEscuela.escuela_nom %></p>
+                <p><b>Nombre director:</b> <%= infoEscuela.user_nom %> <%= infoEscuela.user_appat %> <%= infoEscuela.user_apmat %></p>
+                <p><b>Número de alumnos:</b> <%= numerosAlum %></p>
+                <p><b>Casos de alto riesgo en los últimos 7 días:</b> <%= altoRiesgo %></p>
+                <input type="hidden" name="" id="valorGraf" value="<%=datosGrafica%>">
+                <div class="col-md-4 mx-auto">
+                    <h5 class="text-center">Resultado histórico cuestionarios.</h5>
+                    <canvas id="myChart" width="200px" height="200px"></canvas>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        var valorGraf = document.getElementById('valorGraf').value;
+        let str = valorGraf;
+        let arr = str.split(' ');
+        // console.log(arr);
+        let fin = [];
+        let array = arr;
+            array.forEach(element => {//Para cada valor del array
+            element.split(",").forEach(elm => {//Lo divido en 2 por la coma y para cada uno de los resultados
+            fin.push(parseFloat(elm));//LO meto en el array fin haciéndole un parse a float para evitar comillas
+            });
+        });
+        // console.log(fin);
+        const ctx = document.getElementById('myChart').getContext('2d');
+        // console.log(valorGraf)
+        var myChart = new Chart(ctx, {
+            responsive: true,
+            type: 'pie',
+            data: {
+                labels: ['Bajo riesgo', 'Alto riesgo'],
+                datasets: [{
+                    label: '% DE SALUD ESCUELA',
+                    data: fin,
+                    backgroundColor: [
+                        'rgb(133, 236, 106)',
+                        'rgb(255, 99, 132)'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true
+                // maintainAspectRatio: false,
+                // scales: {
+                //     yAxes: [{
+                //         ticks: {
+                //             beginAtZero: true
+                //         }
+                //     }]
+                // }
+            }
+        });
+    </script>
+    <%- include ('../partials/footerDirec') %>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

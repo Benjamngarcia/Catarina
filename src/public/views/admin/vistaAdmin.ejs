@@ -1,0 +1,23 @@
+<%if (loginadmin===true) {%>
+    <%- include ('../partials/headerAdmin') %>
+    <div class="container mt-3 text-center mx-auto">
+        <div class="row">
+            <% if (escuelas) { %>
+                <% for(var i = 0; i < escuelas.length; i++) { %>
+                    <div class="col-sm-4">
+                        <div class="card mb-3" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><b><%= escuelas[i].escuela_nom %></b></h5>
+                                <p class="card-text">Director: <%= escuelas[i].user_nom %> <%= escuelas[i].user_appat %> <%= escuelas[i].user_apmat %></p>
+                                <a href="infoEscuela/<%= escuelas[i].id_escuela %>" class="btn btn-primary"><i class="fas fa-info"></i>   Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+    <%- include ('../partials/footerDirec') %>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

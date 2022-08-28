@@ -1,0 +1,53 @@
+<canvas id="myChart3" width="100px" height="100px"></canvas>
+<input type="hidden" name="" id="valorGraf1" value="<%=sintos%>">
+<script>
+let valorGraf1 = document.getElementById('valorGraf1').value;
+let str1 = valorGraf1;
+            let arr1 = str1.split(' ');
+            console.log(arr1);
+            let fin1 = [];
+            let array1 = arr1;
+                array1.forEach(element => {//Para cada valor del array
+                element.split(",").forEach(elm => {//Lo divido en 2 por la coma y para cada uno de los resultados
+                fin1.push(parseFloat(elm));//LO meto en el array fin haciéndole un parse a float para evitar comillas
+                });
+            });
+console.log(fin1)
+const ctx3 = document.getElementById('myChart3').getContext('2d');
+const myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ['Contacto', 'Dolor de cabeza', 'Tos', 'Dificultad para respirar', 'Perdida de sentidos', 'Escurrimiento nasal', 'Diarrea', 'Fiebre'],
+        datasets: [{
+            label: 'Síntomas marcados por alumnos',
+            data: fin1,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>

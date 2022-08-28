@@ -1,0 +1,26 @@
+<%if (logindirec===true) {%>
+    <%if(escuelaExist === true ){%>
+        <%- include ('../partials/headerDirec') %>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-12 my-3 mx-2 p-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">INFORMACIÓN PROFESOR</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Nombre completo: </b><%= infoProf.user_nom%> <%= infoProf.user_appat%> <%= infoProf.user_apmat%></p>
+                        <p><b>Correo: </b><%=infoProf.user_correo%></p>
+                        <p><b>Fecha de Nacimiento: </b><%=infoProf.user_edad%></p>
+                        <p><b>Sexo: </b><%=infoProf.user_sexo%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onClick="history.go(-1);" class="btn btn-primary ml-4 ir-atras"><i class="fas fa-angle-double-left"></i></button>
+        <%- include ('../partials/footerDirec') %>
+    <%} else {%>
+        <%-include('../partials/errorsinescuela')%>
+    <%}%>
+<%} else {%>
+        <%-include('../partials/erroracceso')%>
+    <%}%>

@@ -1,0 +1,55 @@
+<div class="row m-3 justify-content-center">
+    <div class="col-md-8 col-sm-12">
+        <div class="card mx-auto">
+            <div class="card-body px-5">
+                <div class="col-md-12">
+                    <h4 class="text-center">REGISTRAR UN TUTOR</h4>
+                    <p class="lead text-center">Eres un usuario menor de edad, por favor registra los datos de tu 
+                        padre/madre o tutor responsable de ti.
+                    </p>
+                    <div class="py-3">
+                        <form class="row g-3" id="registroDirec" method="POST" action="/registrarTutor">
+                            <div class="col-md-4 col-sm-12" id="input__user_nom">
+                                <input type="text" class="form-control" placeholder="Nombre(s)" id="user_nom" name="user_nom" required>
+                                <p class="formulario__input-error">El nombre tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-4 col-sm-12" id="input__user_appat">
+                                <input type="text" class="form-control" placeholder="Apellido paterno" id="user_appat" name="user_appat" required>
+                                <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-4 col-sm-12" id="input__user_apmat">
+                                <input type="text" class="form-control" placeholder="Apellido materno" id="user_apmat" name="user_apmat" required>
+                                <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12" id="input__user_correo">
+                                <input type="email" class="form-control" placeholder="Correo Electrónico" id="user_correo" name="user_correo" required>
+                                <p class="formulario__input-error">El correo tiene que ser un formato válido.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12" id="input__user_contra">
+                                <input type="password" class="form-control" placeholder="Contraseña" id="user_password" name="user_contra" required>
+                                <p class="formulario__input-error">La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <input type="date" class="form-control" id="user_edad" name="user_edad" required>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <select id="user_sexo" name="user_sexo" class="form-select" required>
+                                    <option>Masculino</option>
+                                    <option>Femenino</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 my-1">Guardar Tutor</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SCRIPTS -->
+<!-- SWEET ALERT -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- JS -->
+<script src="/js/validacionesReg.js"></script>

@@ -1,0 +1,29 @@
+<%if (loginalum === true) {%>
+    <%- include ('../partials/headerAlum') %>
+    <!-- QR -->
+    <div class="container-xl">
+        <div class="col-md-6 col-sm-12 mx-auto mt-2 mb-3 pt-2 pb-1">
+            <div class="row justify-content-center">
+                <h3 class="text-center mt-2"><%= data.user_nom %> <%= data.user_appat %> </h3>
+                <h4 class="text-center mt-1"><%= date.enc_fecha %></h4>
+            </div>
+            <div class="row justify-content-center">
+                <img src="<%=qr_code%>" alt="" class="qr-code-size">
+            </div>
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-12 text-center">
+                    <a href="/inicioAlumno" class="rounded-pill bg-primary p-3 px-5 text-light text-decoration-none mx-3">REGRESAR A INICIO</a>
+                    <a href="<%=link%>" class="btn btn-primary text-light m-auto rounded-circle" download="entrada.png">
+                        <i class="fas fa-save"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include ('../partials/footerDirec') %>
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+<%} else {%>
+<%-include('../partials/erroracceso')%>
+<%}%>

@@ -1,0 +1,77 @@
+<%if (loginalum===true) {%>
+    <%if (mayorEdad===true) {%>
+        <%- include ('../partials/headerAlum') %>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-10 col-sm-12 mt-4 p-3" id="quizinstrucciones">
+                    <h5>Instrucciones:</h5>
+                    <p>Marca las opciones correctas de acuerdo a tu caso.</p>
+                    <p>Verifica las respuestas, estas no podrán ser enviadas de nuevo el día de hoy.</p>
+                </div>
+            </div>
+            <form id="formulario" name="formulario" action="/redir/<%=data.id_user%>" method="post">
+                <div class="quiz-preguntas">
+                    <div class="pregunta1">
+                        <p>¿Tú o tu hijo han estado en contacto con algún paciente confirmado de COVID-19 en los últimos 15
+                            días?</p>
+                        <p>
+                            <input type="radio" id="form" name="contacto" value=3>
+                            <label for="3"> Sí</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="form" name="contacto" value=0>
+                            <label for="0">No</label><br><br>
+                        </p>
+                    </div>
+                    <div class="pregunta2">
+                        <p>¿Tú o tu hijo han presentado alguno de los siguientes síntomas?</p>
+                        <p>
+                            <input type="checkbox" id="dolordecabeza" name="cabeza" value="3"">
+                            <label for="dolordecabeza"> Dolor de cabeza</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="tos" name="tos" value="3">
+                            <label for="tos">Tos</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="fiebre" name="fiebre" value="3">
+                            <label for="fiebre"> Fiebre</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="difrespirar" name="difrespirar" value="1">
+                            <label for="difrespirar">Dificultad para respirar</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="nosentidos" name="nosentidos" value="2">
+                            <label for="nosentidos"> Pérdida del sentido del olfato o del gusto</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="escurrinasal" name="escurrinasal" value="1">
+                            <label for="escurrinasal">Escurrimiento nasal</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="diarrea" name="diarrea" value="1">
+                            <label for="diarrea"> Diarrea</label>
+                        </p>
+                    </div>
+                        <button type="submit" id="Submit" class="rounded-pill bg-primary p-3 text-light text-decoration-none border-0 w-80">
+                            ENVIAR RESPUESTA
+                        </button>
+                </div>
+            </form>
+        </div>
+        <%- include ('../partials/footerDirec') %>
+        <%if(typeof alert != "undefined"){%>
+            <%- include ('../partials/message')  %>
+        <%}%>
+    <%} else {%>
+        <%- include ('../partials/headerAlum') %>
+        <%- include ('../auth/regTutor') %>
+        <%- include ('../partials/footerDirec') %>
+            <%if(typeof alert != "undefined"){%>
+                <%- include ('../partials/message')  %>
+            <%}%>
+    <%}%>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

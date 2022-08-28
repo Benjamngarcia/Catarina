@@ -1,0 +1,45 @@
+<%if (logindirec===true) {%>
+    <%- include ('../partials/headerDirec') %>
+    <!-- Cargamos TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <div class="text-center my-4">
+        <!-- <input type="button" class="btn btn-primary" value="Predicción" name="calcular" id="calcular" onclick="learnLinear()" /> -->
+        <button class="btn btn-primary px-4" onclick="learnLinear()"><i class="fas fa-chart-area"></i>  Predecir</button>
+        <canvas id="myChart" class="mx-auto" width="450" height="450"></canvas>
+        <div class="text-secondary">
+            <p>Valor de Y:  <span id="valy"></span></p>
+            <p>Época: <span id="epocas"></span> </p>
+        </div>
+    </div>
+    
+    <!-- <table border="0">
+        <tbody>
+            <tr>
+                <td></td>
+                <td> <input type="button" class="btn btn-primary" value="Predicción" name="calcular" id="calcular" onclick="learnLinear()" /> </td>
+            </tr>
+            <tr>
+                <td>Valor de Y</td>
+                <td> <span id="valy"></span> </td>
+            </tr>
+            <tr>
+                <td>Epoca</td>
+                <td> <span id="epocas"></span> </td>
+            </tr>
+        </tbody>
+    </table>
+    <canvas id="myChart" width="400" height="400"></canvas> -->
+    <input type="hidden" name="" id="fechasML" value="<%=dataEnc%>">
+    <input type="hidden" name="" id="fechasML0" value="<%=dataEnc0%>">
+    <input type="hidden" name="" id="cantidadAlum" value="<%=cantidadAlum%>">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <div class="px-5 mx-5">
+        <canvas id="speedChart" class="p-5" width="10px" height="10px"></canvas>
+    </div> -->
+    <script src="/js/regresionLineal.js"></script>
+
+    <%- include ('../partials/footerDirec') %>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>

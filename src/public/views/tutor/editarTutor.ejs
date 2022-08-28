@@ -1,0 +1,54 @@
+<%if (logintutor===true) {%>
+    <%- include ('../partials/headerTutor') %>
+    <div class="row m-3 justify-content-center">
+        <div class="col-md-6 col-sm-12 my-4">
+            <div class="card mx-auto">
+                <div class="card-body px-5">
+                    <div class="col-md-12">
+                        <h4 class="text-center">EDITAR INFORMACIÓN</h4>
+                        <div class="py-3">
+                            <form class="row g-3" id="registroDirec" method="POST" action="/editarInfoTutor/<%=info.id_user%>">
+                                <div class="col-md-4 col-sm-12" id="input__user_nom">
+                                    <label for="user_nom">Nombre(s):</label>
+                                    <input type="text" value="<%=info.user_nom%>" class="form-control" placeholder="Nombre(s)" id="user_nom" name="user_nom" required>
+                                    <p class="formulario__input-error">El nombre tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12" id="input__user_appat">
+                                    <label for="user_appat">Apellido Paterno:</label>
+                                    <input type="text" value="<%=info.user_appat%>" class="form-control" placeholder="Apellido paterno" id="user_appat" name="user_appat" required>
+                                    <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12" id="input__user_apmat">
+                                    <label for="user_apmat">Apellido Materno:</label>
+                                    <input type="text" value="<%=info.user_apmat%>" class="form-control" placeholder="Apellido materno" id="user_apmat" name="user_apmat" required>
+                                    <p class="formulario__input-error">El apellido tiene que tener de 1 a 40 caracteres y solo puede contener letras y acentos.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12" id="input__user_correo">
+                                    <label for="user_correo">Correo electrónico:</label>
+                                    <input type="email" value="<%=info.user_correo%>" class="form-control" placeholder="Correo Electrónico" id="user_correo" name="user_correo" required>
+                                    <p class="formulario__input-error">El correo tiene que ser un formato válido.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-12" id="input__user_contra">
+                                    <label for="user_contra">Contraseña:</label>
+                                    <input type="text" value="<%=info.user_contra%>" class="form-control" placeholder="Contraseña" id="user_password" name="user_contra" required>
+                                    <p class="formulario__input-error">La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</p>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 my-1">Guardar cambios</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/js/validacionesEditar.js"></script> -->
+    <%if(typeof alert != "undefined"){%>
+        <%- include ('../partials/message')  %>
+    <%}%>
+    <%- include ('../partials/footerDirec') %>
+<%} else {%>
+    <%-include('../partials/erroracceso')%>
+<%}%>
+
