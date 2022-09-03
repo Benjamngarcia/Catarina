@@ -23,8 +23,8 @@ La realización de este proyecto fue posible mediante el uso de distintas tecnol
 - [Bootstrap](https://getbootstrap.com/) -Framework CSS.
 - [SASS](https://sass-lang.com/) -Metalenguaje de hojas de estilo en cascada.
 ## Despliegue 📦
-El proyecto es desplegado con Heroku y ClearDB para la base de datos, lo puedes encontrar funcionando en: 
-https://catarina.up.railway.app/
+El proyecto es desplegado con Railway y ClearDB para la base de datos, lo puedes encontrar funcionando en: 
+https://catarina-production.up.railway.app/
 ## Autores ✒️
 La existencia de este proyecto se debe al equipo llamado [DICTAMIGOS & ASOCS.](http://www.dictamigos.xyz) que se encuentra conformado por:
 - Alberto Montero Molina [Ver en GitHub](https://github.com/albertomonterom)
